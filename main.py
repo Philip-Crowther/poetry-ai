@@ -1,10 +1,10 @@
 # this file makes compiles the poetry prompt input and makes calls to the open ai api
 import os, openai
-import pandas as pd
 import random as r
 
 NUMBER_OF_POEMS_CREATED = 1
 
+with open()
 
 def generate_prompt():
     """generates a selection of random poems as a prompt"""
