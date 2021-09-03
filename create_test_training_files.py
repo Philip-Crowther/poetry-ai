@@ -8,4 +8,8 @@ poets = ['Emily Dickinson', 'Walt Whitman', 'William Wordsworth', 'Robert Frost'
          'Gwendolyn Brooks', 'Edgar Allan Poe', 'Langston Hughes', 'James Baldwin', 'Rita Dove',
          'William Carlos Williams', 'Allen Ginsberg', 'Lucille Clifton', 'Audre Lorde']
 
-poems = data.loc[data['Author'].isin(poets)]
+poem_table = data.loc[data['Author'].isin(poets)]
+
+poems = poem_table['Content']
+
+poems.to_csv('test_poems.csv', index=False)
