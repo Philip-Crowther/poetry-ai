@@ -10,6 +10,11 @@ poets = ['Emily Dickinson', 'Walt Whitman', 'William Wordsworth', 'Robert Frost'
 
 poem_table = data.loc[data['Author'].isin(poets)]
 
-poems = poem_table['Content']
+poems = pd.DataFrame(poem_table['Content'])
+prompt = [''] * poems.shape[0]
+poems['prompt'] = prompt
+poems.rename(columns={'Content': 'completion', 'prompt': 'prompt'}, inplace=True)
+print(poems.columns)
+print(poems.head())
 
 poems.to_csv('test_poems.csv', index=False)
