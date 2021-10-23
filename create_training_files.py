@@ -19,3 +19,6 @@ print(poems.columns)
 print(poems.head())
 
 poems.to_csv('test_poems.csv', index=False)
+
+# INSTRUCTION TO FORMAT AND TRAIN WITH PROMPTS:
+# https://beta.openai.com/docs/guides/fine-tuning
