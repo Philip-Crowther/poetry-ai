@@ -4,7 +4,10 @@ import pandas as pd
 data = pd.read_csv('kaggle_poem_dataset.csv')
 
 author_frequency = data['Author'].value_counts()
-# TODO: create training set of said poems
+
+# note to self: if training any additional times, you have trained up to 
+# the 65 most frequent poets' poems
+poets = poets = author_frequency.index[:65]
 
 poem_table = data.loc[data['Author'].isin(poets)]
 
