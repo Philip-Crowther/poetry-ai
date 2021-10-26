@@ -3,12 +3,17 @@ import pandas as pd
 
 data = pd.read_csv('kaggle_poem_dataset.csv')
 
-poems = pd.DataFrame(data['Content'])
+author_frequency = data['Author'].value_counts()
+
+
+poets = poets = author_frequency.index[:300]
+
+poem_table = data.loc[data['Author'].isin(poets)]
+
+poems = pd.DataFrame(poem_table['Content'])
 prompt = [''] * poems.shape[0]
 poems['prompt'] = prompt
 poems.rename(columns={'Content': 'completion', 'prompt': 'prompt'}, inplace=True)
-print(poems.columns)
-print(poems.head())
 
 poems.to_csv('test_poems.csv', index=False)
 
