@@ -1,6 +1,8 @@
-#s follow back all followers not previously followed
+#!/usr/bin/env python
+# follow back all followers not previously followed
 import tweepy
 import build_api
+import time
 
 def follow(api):
     """follow unfollowed followers"""
@@ -10,11 +12,10 @@ def follow(api):
 
 def main():
     """build api and follow followers"""
-    print("creating api")
-    api = build_api.build_api()
-    print("executing follow function")
-    follow(api)
-    print("finished")
+    api = build_api().build_api()
+    while True:
+        follow(api)
+        time.sleep(60)
 
 if __name__ == "__main__":
     main()
