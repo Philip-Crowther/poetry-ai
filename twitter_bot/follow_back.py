@@ -12,7 +12,7 @@ def follow(api):
 
 def main():
     """build api and follow followers"""
-    api = build_api().build_api()
+    api = build_api.build_api()
     while True:
         follow(api)
         time.sleep(60)
